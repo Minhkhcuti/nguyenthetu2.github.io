@@ -75,17 +75,18 @@
                     .replace(/Đ/g, "D");
             }
 
-            getNameParts() {
-                let cleanName = this.fullName.replace(/\(.*?\)/g, "");
-let name = this.removeVietnamese(cleanName.toLowerCase());
-                let parts = name.split(" ");
+ getNameParts() {
+    let cleanName = this.fullName.replace(/\(.*?\)/g, "");
+    let name = this.removeVietnamese(cleanName.toLowerCase());
 
-                let firstName = parts.pop();
-                let lastName = parts.shift();
-                let middleName = parts.join("");
+    let parts = name.trim().split(" ");
 
-                return { firstName, lastName, middleName };
-            }
+    let firstName = parts.pop();
+    let lastName = parts.shift();
+    let middleName = parts.join("");
+
+    return { firstName, lastName, middleName };
+}
 
             generateEmail() {
                 let { firstName, lastName, middleName } = this.getNameParts();
