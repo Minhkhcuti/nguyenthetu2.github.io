@@ -76,6 +76,7 @@
             }
 
             getNameParts() {
+                let cleanName = this.fullName.replace(/\(.*?\)/g, "");
                 let name = this.removeVietnamese(this.fullName.toLowerCase());
                 let parts = name.split(" ");
 
